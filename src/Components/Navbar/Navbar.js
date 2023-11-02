@@ -3,7 +3,7 @@ import { TiThList } from "react-icons/ti";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectData } from "../../Action/ActionData";
-import { DataReducer } from "../../Reducers/DataReducer"; 
+//import { DataReducer } from "../../Reducers/DataReducer"; 
 //C:\Users\Aarushi Vij\OneDrive\Desktop\code_quicksell\quicksell\src\Reducers\DataReducer.js
 const getGroup = () => {
   // console.log(localStorage.getItem("group"));
