@@ -1,0 +1,42 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+}
+
+/* Create a keyframe animation for the background color */
+@keyframes changeBackgroundColor {
+  0% {
+    background: lavender; /* Start with the original background color */
+  }
+  50% {
+    background: lightblue; /* Transition to a different color, e.g., light blue */
+  }
+  100% {
+    background: lavender; /* Return to the original background color */
+  }
+}
+
+/* Apply the animation to the .dashContainer */
+.dashContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 5px 10px;
+  animation: changeBackgroundColor 10s infinite; /* 10s duration and repeat indefinitely */
+}
+
+/* Styles for .dashCardContainer */
+.dashCardContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 300px;
+}

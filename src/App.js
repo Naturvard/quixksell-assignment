@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, { useEffect } from 'react'
+// import './App.css';
+// import Navbar from './Components/Navbar/Navbar';
+// // import Card from './components/Card/Card';
+// import Dashboard from './Components/Dashboard/Dashboard';
+// import { useDispatch, useSelector} from 'react-redux'
+// import { fetchAllData } from './Action/ActionData';
+// import Loader from './Components/Loader/Loader';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// const App = () => {
+//   const dispatch = useDispatch();
+//   const {allTickets} = useSelector(state => state.DataReducer);
+   
+//   useEffect(() => {
+//     dispatch(fetchAllData());
+//   }, [dispatch])
+
+//   return allTickets ? (
+//     <div style={{paddingTop : "10px"}} >
+//       <Navbar/>
+//       <hr style={{marginTop : "10px"}} />
+//       <Dashboard/>
+//     </div>
+//   ) : <Loader/>
+// }
+
+
+// export default App
+import React, { useEffect } from 'react';
+import './App.css';
+import Navbar from './Components/Navbar/Navbar';
+import Dashboard from './Components/Dashboard/Dashboard';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllData } from './Action/ActionData'; // Make sure to import your action creator
+import Loader from './Components/Loader/Loader';
+
+const App = () => {
+  const dispatch = useDispatch();
+  const { allTickets } = useSelector((state) => state.DataReducer);
+
+  useEffect(() => {
+    dispatch(fetchAllData()); // Dispatch your action to fetch data
+  }, [dispatch]);
+
+  return allTickets ? (
+    <div style={{ paddingTop: '10px' }}>
+      <Navbar />
+      <hr style={{ marginTop: '10px' }} />
+      <Dashboard />
     </div>
-  );
-}
+  ) : <Loader />;
+};
 
 export default App;
